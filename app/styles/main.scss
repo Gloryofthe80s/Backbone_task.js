@@ -100,7 +100,7 @@ body {
 
 // ------ PRINTED TASKS ------
 
-.printed-task-container {
+.task-wrapper {
     padding: 10px;
     margin-bottom: 8px;
     text-align: center;
@@ -150,7 +150,7 @@ body {
 //     background-color: $success;
 // }
 
-// .task-wrapper.completed .task-p {
+// .task-wrapper.completed {
 //     text-decoration: line-through;
 // }
 

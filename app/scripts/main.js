@@ -3,6 +3,11 @@ $(document).ready(function() {
     //create the task collection
     window.tasksCollection = new TasksCollection();
 
+    tasksCollection.on('add',function(newTask){
+        console.log('ADD EVENT!')
+        new PrintedTaskView({model: newTask})
+    });
+
     $('#create-new-task-input').on('keypress', function(e) {
         //on enter keypress, so long as the input isn't empty
         if(e.which == 13 && $(this).val() != '') {
@@ -12,7 +17,7 @@ $(document).ready(function() {
             };
 
             // construct the task object and add it to the collection
-            new Task( newTask );
+            var aNewTask = new Task( newTask );
             tasksCollection.add( newTask );
             // newTask.save();
 

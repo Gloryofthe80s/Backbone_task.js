@@ -44,23 +44,6 @@
             </div>
             <div class="ten columns offset-by-three">
                 <div class="printed-task-container">
-                    <div class="task-wrapper">
-                        <div class="task-side-left">
-                            <div class="task-name">
-                                <p> test task </p>
-                            </div>
-                        </div>
-                        <div class="task-side-right">
-                            <div class="task-btns btn-group btn-group-md">
-                                <button type="button" class="btn-mark-completed btn btn-default">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </button>
-                                <button type="button" class="btn-trash-task btn btn-default">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="footer ten columns offset-by-three">
@@ -70,24 +53,23 @@
 
 
         <script id="printed-task-template" type="text/template">
-            <div class="task-wrapper <%= complete ? 'completed' : 'fake-class' %>">
-                <div class="task-side-left">
-                    <div class="task-name">
-                        <p class="task-p"><%= task %></p>
-                    </div>
-                </div>
 
-                <div class="task-side-right">
-                    <div class="task-btns btn-group btn-group-md">
-                        <button type="button" class="btn-mark-completed btn btn-default">
-                            <span class="glyphicon glyphicon-ok"></span>
-                        </button>
-                        <button type="button" class="btn-trash-task btn btn-default">
-                            <span class="glyphicon glyphicon-trash"></span>
-                        </button>
-                    </div>
+            <div class="task-side-left">
+                <div class="task-name">
+                    <p><%= name %></p>
                 </div>
             </div>
+            <div class="task-side-right">
+                <div class="task-btns btn-group btn-group-md">
+                    <button type="button" class="btn-mark-completed btn btn-default">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                    <button type="button" class="btn-trash-task btn btn-default">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </div>
+            </div>
+
         </script>
 
 

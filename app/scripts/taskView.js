@@ -1,6 +1,6 @@
-var PrintedTask = Backbone.View.extend({
+var PrintedTaskView = Backbone.View.extend({
     tagName: 'div',
-    className: 'printed-task-wrapper',
+    className: 'task-wrapper',
 
     template: _.template($('#printed-task-template').text()),
 
@@ -9,6 +9,7 @@ var PrintedTask = Backbone.View.extend({
     },
 
     initialize: function() {
+        console.log('initialized!')
         $('.printed-task-container').append( this.el ); //get the empty tag into the DOM
 
         this.render();
