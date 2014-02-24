@@ -4,6 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet' type='text/css'>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>backbone_task_js</title>
@@ -28,17 +29,48 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container">
-            <div id="create-new-task-container eight columns offset-by-two">
-                <input id="create-new-task-input" placeholder="I need to..."></input>
-            </div>
-            <div class= "printed-task-container eight columns offset-by-two"></div>
 
-        </div>
+        <!-- The container is a centered 960px -->
+
+        <div class="container">
+
+            <div class="header ten columns offset-by-three">
+                <div> task.js </div>
+            </div>
+            <div class="ten columns offset-by-three">
+                <div id="create-new-task-container">
+                    <input id="create-new-task-input" placeholder="I need to..."></input>
+                </div>
+            </div>
+            <div class="ten columns offset-by-three">
+                <div class="printed-task-container">
+                    <div class="task-wrapper">
+                        <div class="task-side-left">
+                            <div class="task-name">
+                                <p> test task </p>
+                            </div>
+                        </div>
+                        <div class="task-side-right">
+                            <div class="task-btns btn-group btn-group-md">
+                                <button type="button" class="btn-mark-completed btn btn-default">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                                <button type="button" class="btn-trash-task btn btn-default">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer ten columns offset-by-three">
+                    <p>made by <a href="http://gloryoftheeighties.wordpress.com/" target="blank"> jacob wielgus </a></p>
+            </div>
+        </div> <!-- end container -->
 
 
         <script id="printed-task-template" type="text/template">
-            <div class="task-wrapper <%= complete ? 'completed' : 'fake-class' %>" id= "<%= uniqueId %>">
+            <div class="task-wrapper <%= complete ? 'completed' : 'fake-class' %>">
                 <div class="task-side-left">
                     <div class="task-name">
                         <p class="task-p"><%= task %></p>
@@ -62,20 +94,15 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/taskModel.js"></script>
+        <script src="scripts/taskView.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
