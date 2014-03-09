@@ -9,19 +9,16 @@ var PrintedTaskView = Backbone.View.extend({
     },
 
     initialize: function() {
-        console.log('initialized!')
-        $('.printed-task-container').append( this.el ); //get the empty tag into the DOM
+        $('.printed-task-container').append( this.el );
 
-        this.render();
-
-        this.listenTo(this.model, 'change', this.render); //if the model itself changes, this will be updated
+        this.listenTo(this.model, 'change', this.render);
     },
 
     render: function() {
         var renderedTemplate = this.template( this.model.attributes );
 
         this.$el.html( renderedTemplate );
-    },
+    }
 
 });
 
